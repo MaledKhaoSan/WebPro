@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('asset/restaurant_logo.jpeg') }}">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="{{ asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/app.css')}}">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">      
+
 </head>
 <body class="bg-[#E6EAF3] grid grid-cols-12 gap-32 relative">
     <div class=" bg-white w-60 h-screen fixed px-5 overflow-hidden">
@@ -45,7 +47,3 @@
     </section>
 </body>
 </html>
-
-
-<style>
-</style>

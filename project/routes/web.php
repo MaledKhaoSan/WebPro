@@ -26,10 +26,16 @@ Route::get('/queue', function () {
     return view('queue');
 });
 
-Route::get('/kitchenorder', function () {
-    return view('kitchenorder');
-});
 Route::get('/kitchenorder', [KitchenOrderController::class, 'index']);
+
+Route::match(['get', 'post'], 'kitchenorder/updateOrderStage/{orderId}/{menuId}', [KitchenOrderController::class, 'updateOrderStage'])->name('updateOrderStage');
+Route::match(['get', 'post'], 'kitchenorder/completeOrderStage/{orderId}/{menuId}', [KitchenOrderController::class, 'completeOrderStage'])->name('completeOrderStage');
+
+Route::get('kitchenorder/updateOrderStatus/{orderId}', [KitchenOrderController::class, 'updateOrderStatus'])->name('updateOrderStatus');
+Route::get('kitchenorder/completeOrderStatus/{orderId}', [KitchenOrderController::class, 'completeOrderStatus'])->name('completeOrderStatus');
+
+
+
 
 
 Route::get('/menumanagement', function () {

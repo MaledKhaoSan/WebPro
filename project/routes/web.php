@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KitchenOrderController;
 use App\Http\Controllers\MenuManagementController;
+use App\Http\Controllers\SummaryController;
 
 
 /*
@@ -33,6 +34,8 @@ Route::get('/summary', function () {
 Route::get('/staff-main', function () {
     return view('staff-main');
 });
+
+Route::get('/summary', [SummaryController::class, 'index']);
 
 Route::get('/kitchenorder', [KitchenOrderController::class, 'index']);
 

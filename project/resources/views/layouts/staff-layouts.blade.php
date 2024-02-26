@@ -41,4 +41,6 @@
         @yield('content')
     </section>
 </body>
+@yield('javascript')
 </html>
+

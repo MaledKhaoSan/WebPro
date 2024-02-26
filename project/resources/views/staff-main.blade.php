@@ -1,6 +1,6 @@
-@extends('layouts.chief-layouts')
+@extends('layouts.staff-layouts')
 
-@section('title', 'Example Page')
+@section('title', 'Dashboard')
 
 @section('content')
     <h1 class="text-5xl" >Welcome to the Example Page</h1>

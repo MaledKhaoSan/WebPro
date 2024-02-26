@@ -26,6 +26,14 @@ Route::get('/queue', function () {
     return view('queue');
 });
 
+Route::get('/summary', function () {
+    return view('summary');
+});
+
+Route::get('/staff-main', function () {
+    return view('staff-main');
+});
+
 Route::get('/kitchenorder', [KitchenOrderController::class, 'index']);
 
 Route::match(['get', 'post'], 'kitchenorder/updateOrderStage/{orderId}/{menuId}', [KitchenOrderController::class, 'updateOrderStage'])->name('updateOrderStage');

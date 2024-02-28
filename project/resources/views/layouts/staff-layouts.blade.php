@@ -37,7 +37,7 @@
             </a>
         </div>
     </div>
-    <section class="col-start-3 col-span-full bg-white my-7 mr-7 p-4 rounded-xl relative">
+    <section class="flex flex-col col-start-3 col-span-full bg-gray-50 my-7 mr-7 p-4 rounded-xl relative gap-y-3">
         @yield('content')
     </section>
 </body>

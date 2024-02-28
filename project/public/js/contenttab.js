@@ -15,6 +15,8 @@ tabs.forEach(tab => {
         tabContents.forEach(content => content.classList.remove('activecontent'));
         document.querySelector(`.tab_content[name="${target}"]`).classList.add('activecontent');
 
+        // console log the name of content
+        console.log(target);
     });
 });
 

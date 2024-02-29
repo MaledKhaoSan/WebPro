@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KitchenOrderController;
 use App\Http\Controllers\MenuManagementController;
-use App\Http\Controllers\SummaryController;
+use App\Http\Controllers\OrderFoodController;
+
+
 
 
 /*
@@ -21,21 +23,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Route::get('/queue', function () {
     return view('queue');
 });
 
-Route::get('/summary', function () {
-    return view('summary');
+Route::get('/tablemanagement', function () {
+    return view('tablemanagement');
 });
 
-Route::get('/staff-main', function () {
-    return view('staff-main');
-});
+Route::get('/confirmorder', [OrderFoodController::class, 'confirmOrder'])->name('confirmorder');
+Route::get('/orderfood', [OrderFoodController::class, 'index'])->name('orderFood');
+Route::post('/addToCart', [OrderFoodController::class, 'addToCart'])->name('addToCart');
+Route::get('/getUpdatedOrderDetails', [OrderFoodController::class, 'getUpdatedOrderDetails']);
 
-Route::get('/summary', [SummaryController::class, 'index']);
+
 
 Route::get('/kitchenorder', [KitchenOrderController::class, 'index']);
 

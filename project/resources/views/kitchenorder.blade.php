@@ -6,7 +6,9 @@
     <h1 class="prompt pb-5 font-extralight text-2xl">ออเดอร์ทั้งหมด</h1>
     <div class="flex flex-row justify-start gap-4">
         <div class="rounded-xl mb-2 py-4 pl-2 pr-4 border-2 border-[#dde3ed] text-[#75639C] flex flex-row justify-between items-center gap-4">
-            <p class="h-full text-8xl">🧑🏻‍🍳</p>
+            <p class="h-full w-[6rem]">
+                <img src="{{ asset('/asset/female-cook.png') }}">
+            </p>
             <div class="flex flex-col justify-between h-full">
                 <div class="flex flex-row justify-between items-center gap-3">
                     <h1 class="text-xl">ออเดอร์ที่รออยู่</h1>
@@ -27,7 +29,9 @@
         </div>
 
         <div class="rounded-xl mb-2 py-4 pl-2 pr-4 border-2 border-[#dde3ed] text-[#75639C] flex flex-row justify-between items-center gap-4">
-            <p class="h-full text-8xl">🍽</p>
+            <p class="h-full w-[6rem]">
+                <img src="{{ asset('/asset/knife_fork_plate.png') }}">
+            </p>
             <div class="flex flex-col justify-between h-full">
                 <div class="flex flex-row justify-between items-center gap-3">
                     <h1 class="text-xl">ออเดอร์ที่เสิร์ฟแล้ว</h1>
@@ -86,23 +90,7 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
                     </svg>
                 </div>
-            </a>
-
-
-            <script>
-                function updateDisplayOption(displayOption) {
-
-                    
-                }
-            </script>
-
-
-
-
-
-
-
-            
+            </a>            
         </div>
     </div>
 
@@ -423,9 +411,7 @@
         </div>
     </div>
     <div id="alertboxDisplay" class="absolute z-10 flex flex-col gap-6 top-0 right-0 p-4 pr-6"></div>
-
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2"></script>
-
     @if (Session::has('alert'))
         <script>
             var alertContainer = `@php echo view("components.alert-box", ["title" => Session::get('alert')['title'], "message" => json_encode(Session::get('alert')['message']) ])->render(); @endphp`;

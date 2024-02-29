@@ -25,6 +25,7 @@
                     </div>
                 </div>
 
+                
                 <div class="col-auto w-16 flex flex-col">
                     <p class="text-xs font-light">หมวดหมู่</p>
                     <p class="text-sm text-[#817e7e]">{{ $menu->category->category_name }}</p>

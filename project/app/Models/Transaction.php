@@ -13,7 +13,7 @@ class Transaction extends Model
     protected $table = 'transaction'; // ชื่อตารางในฐานข้อมูล
     protected $primaryKey = 'trans_id'; // Primary key ของตาราง
     protected $fillable = [
-        'amount', 'trans_date'
+        'amount', 'trans_date', 'trans_time'
     ];
 
 }

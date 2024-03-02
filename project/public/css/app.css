@@ -1,95 +1,125 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
-*{
-  font-family: "Kanit", sans-serif;
-  font-weight: 300;
-  font-style: light;
+* {
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style: light;
 }
 
-.layout_tab{
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid #fff;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.3s;
+@layer components{
+  .btn-green {
+    @apply bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 active:bg-green-700 transition duration-300;
+  }
+  .btn-red {
+    @apply bg-red-500 text-white rounded-md hover:bg-red-600 active:bg-red-700 transition duration-300;
+  }
 }
 
-.layout_tab:hover{
-  background-color: #6E62E5;
-  /* translate-x 0.1rem */
-  transform: translateX(0.1rem);
+
+.layout_tab {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #fff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.layout_tab:hover {
+    background-color: #6e62e5;
+    /* translate-x 0.1rem */
+    transform: translateX(0.1rem);
 }
 
 /* img inside layout_tab */
-.layout_tab img{
-  /* invert-[70%] group-hover:invert*/
-  filter: invert(70%);
-  transition: all 0.3s;
+.layout_tab img {
+    /* invert-[70%] group-hover:invert*/
+    filter: invert(70%);
+    transition: all 0.3s;
 }
 
-.layout_tab:hover img{
-  filter: invert(100%);
+.layout_tab:hover img {
+    filter: invert(100%);
 }
 
 /* h6 inside layout_tab */
-.layout_tab h6{ 
-  /* text-[#817e7e] group-hover:invert */
-  color: #817e7e;
-  transition: all 0.3s;
+.layout_tab h6 {
+    /* text-[#817e7e] group-hover:invert */
+    color: #817e7e;
+    transition: all 0.3s;
 }
 
-.layout_tab:hover h6{
-  color: #fff;
+.layout_tab:hover h6 {
+    color: #fff;
 }
 
-.content_tab{
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid #fff;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.3s;
+.content_tab {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #fff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-.content_tab:hover{
-  background-color: #6d62e53d;
-  /* translate-x 0.1rem */
-  /* transform: translateX(0.1rem); */
+.content_tab:hover {
+    background-color: #6d62e53d;
+    /* translate-x 0.1rem */
+    /* transform: translateX(0.1rem); */
 }
 
-.content_tab h6{
-  /* text-[#817e7e] group-hover:invert */
-  /* color:#000000; */
-  /* filter: invert(100%); */
-  color:black;
-  transition: all 0.3s;
+.content_tab h6 {
+    /* text-[#817e7e] group-hover:invert */
+    /* color:#000000; */
+    /* filter: invert(100%); */
+    color: black;
+    transition: all 0.3s;
 }
 
-.active{
-  background-color: #6E62E5;
-  /* transform: translateX(0.1rem); */
+.active {
+    background-color: #6e62e5;
+    /* transform: translateX(0.1rem); */
 }
 
-.activetext{
-  color: #fff !important;
+.activetext {
+    color: #fff !important;
 }
 
-.tab_content{
-  display: none;
-  transition: all 0.3s;
+.tab_content {
+    display: none;
+    transition: all 0.3s;
 }
 
+<<<<<<< Updated upstream
 .tab_content.activecontent{
   display: flex !important;
+=======
+.tab_content.activecontent {
+    display: block !important;
+}
+
+th,
+td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 40px;
+}
+
+table,th {
+    font-weight: 400;
+}
+
+table,td {
+    font-weight: 500;
+>>>>>>> Stashed changes
 }

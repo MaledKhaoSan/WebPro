@@ -100,7 +100,7 @@
 }
 
 .tab_content.activecontent {
-    display: block !important;
+    display: flex !important;
 }
 
 th,

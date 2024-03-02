@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KitchenOrderController;
 use App\Http\Controllers\MenuManagementController;
 use App\Http\Controllers\SummaryController;
+use App\Http\Controllers\SMainController;
 
 
 /*
@@ -36,6 +37,9 @@ Route::get('/staff-main', function () {
 });
 
 Route::get('/summary', [SummaryController::class, 'index']);
+
+Route::get('/staff-main', [SMainController::class, 'index']);
+// Route::get('/staff-main', [SMainController::class, 'topt']);
 
 Route::get('/kitchenorder', [KitchenOrderController::class, 'index']);
 

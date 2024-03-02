@@ -10,7 +10,7 @@
 {{-- notification bar --}}
 <div class="flex flex-col gap-1">
     <a href="{{ url('/summary') }}" class="grid grid-cols-2 items-center bg-[#6E62E5] w-full p-3 rounded-xl">
-        <h6 class="justify-self-start text-start text-white text-xl">แจ้งเตือนจากในครัว : <strong class="text-[#e3e562] font-bold">98</strong> ออเดอร์ พร้อมเสิร์ฟแล้ว</h6>
+        <h6 class="justify-self-start text-start text-white text-xl">แจ้งเตือนจากในครัว : <strong class="text-[#e3e562] font-bold">{{$pending}}</strong> ออเดอร์ พร้อมเสิร์ฟแล้ว</h6>
         <h6 class="justify-self-end text-end text-white text-xl">></h6>
     </a>
     <a href="{{ url('/summary') }}" class="grid grid-cols-2 items-center bg-[#6E62E5] w-full p-3 rounded-xl">

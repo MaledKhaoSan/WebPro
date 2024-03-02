@@ -8,7 +8,7 @@ class Order extends Model
 {
     use HasFactory;
 
-    protected $table = 'Order';
+    protected $table = 'order';
     protected $primaryKey = 'order_id';
     const CREATED_AT = 'order_time';
     public $timestamps = false;

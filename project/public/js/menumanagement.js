@@ -26,7 +26,7 @@ function editMenu(menuId, menuName, menuDescription, menuPrice, menuCategory, me
         filenameLabel.textContent = '';
     }
     document.getElementById('menuEditor').style.display = 'block';
-    }
+}
 
 function adderMenu() {
     document.getElementById('menuAdder').style.display = 'block';

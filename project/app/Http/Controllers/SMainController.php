@@ -21,7 +21,7 @@ class SMainController extends Controller
         // get only yesterday trans using trans_date field
         $yesterday = date("Y-m-d", strtotime("-1 days"));
         $trans_ = Transaction::whereDate('trans_date', $yesterday)->get();
-        
+         
 
         // sum the number of amount of transactions
         $total = $trans->sum('amount');

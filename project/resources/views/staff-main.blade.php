@@ -14,7 +14,7 @@
         <h6 class="justify-self-end text-end text-white text-xl">></h6>
     </a>
     <a href="{{ url('/summary') }}" class="grid grid-cols-2 items-center bg-[#6E62E5] w-full p-3 rounded-xl">
-        <h6 class="justify-self-start text-start text-white text-xl">แจ้งเตือนจากในร้าน : <strong class="text-[#e3e562] font-bold">3</strong> โต๊ะ พร้อมให้บริการแล้ว</h6>
+        <h6 class="justify-self-start text-start text-white text-xl">แจ้งเตือนจากในร้าน : <strong class="text-[#e3e562] font-bold">{{$avail}}</strong> โต๊ะ พร้อมให้บริการแล้ว</h6>
         <h6 class="justify-self-end text-end text-white text-xl">></h6>
     </a>
 </div>
@@ -24,7 +24,7 @@
             <div class="flex flex-col gap-3 shadow-xl p-5 rounded-2xl bg-white h-full">
                 <h1 class="text-3xl font-bold text-start"> กำไรวันนี้💰 </h1>
                 <h1 class="text-7xl text-start text-green-600 font-bold">฿ {{$total}} </h1>
-                <h1 class="text-xl text-start"> 💹เพิ่มขึ้น 28% จากเมื่อวาน </h1>
+                <h1 id="percentage" class="text-xl text-start"> <strong>{{$raises}} %</strong> จากเมื่อวาน </h1>
                 <a href='./summary.blade.php' class="text-sm text-end font-bold text-gray-500/50"> > หน้าแสดงยอดขาย </a>
             </div>
             <div class="flex flex-col gap-3 shadow-xl p-5 rounded-2xl bg-white h-full">
@@ -67,4 +67,20 @@
         </div>
     </div>
 </div>
+@endsection
+@section('javascript')
+
+<script>
+    // check if php $raises is positive
+    if ({{$raises}} > 0) {
+        document.getElementById('percentage').innerHTML = "<strong style='text-shadow: 0 0 0 green;' class='text-transparent text-xl text-start'>{{$raises}} %</strong> จากเมื่อวาน🔺";
+    }
+    else {
+        document.getElementById('percentage').innerHTML = "<strong style='text-shadow: 0 0 0 red;' class='text-transparent text-xl text-start'>{{$raises}} %</strong> จากเมื่อวาน🔻";
+    }
+</script>
+
+
+
+
 @endsection

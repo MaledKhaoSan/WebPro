@@ -3,9 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KitchenOrderController;
 use App\Http\Controllers\MenuManagementController;
-use App\Http\Controllers\OrderFoodController;
-
-
+use App\Http\Controllers\SummaryController;
+use App\Http\Controllers\SMainController;
 
 
 /*
@@ -23,20 +22,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get('/queue', function () {
     return view('queue');
 });
 
-Route::get('/tablemanagement', function () {
-    return view('tablemanagement');
+Route::get('/summary', function () {
+    return view('summary');
 });
 
-Route::get('/confirmorder', [OrderFoodController::class, 'confirmOrder'])->name('confirmorder');
-Route::get('/orderfood', [OrderFoodController::class, 'index'])->name('orderFood');
-Route::post('/addToCart', [OrderFoodController::class, 'addToCart'])->name('addToCart');
-Route::get('/getUpdatedOrderDetails', [OrderFoodController::class, 'getUpdatedOrderDetails']);
+Route::get('/staff-main', function () {
+    return view('staff-main');
+});
 
+Route::get('/summary', [SummaryController::class, 'index']);
 
+Route::get('/staff-main', [SMainController::class, 'index']);
+// Route::get('/staff-main', [SMainController::class, 'topt']);
 
 Route::get('/kitchenorder', [KitchenOrderController::class, 'index']);
 

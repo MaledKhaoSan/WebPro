@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
 use App\Models\Menu;
+use App\Models\OrderDetail;
 use App\Models\Order;
 use App\Models\Table;
 
@@ -30,16 +31,24 @@ class SMainController extends Controller
         $tops = Menu::orderBy('sales', 'desc')->take(3)->get();
         // dd($tops);
         // sum the number of pending order
-        $pending = Order::where('order_status', 'pending')->count();
+        $pending = OrderDetail::where('order_stage', 'เสร็จแล้ว')->count();
         // sum the number of avail table
         $avail = Table::where('table_status', 'ว่าง')->count();
+
+        // get ready to serve order from order detail
+        $ready = OrderDetail::where('order_stage', 'เสร็จแล้ว')->get();
+        // filter out the complete order
+        $ready = $ready->filter(function ($value, $key) {
+            return $value->order->order_status != 'complete';
+        });
 
         return view('staff-main', [
             'total' => $total,
             'raises' => $raises,
             'tops' => $tops,
             'pending' => $pending,
-            'avail' => $avail
+            'avail' => $avail,
+            'ready' => $ready
         ]);
     }
 

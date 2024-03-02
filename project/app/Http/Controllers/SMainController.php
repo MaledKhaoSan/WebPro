@@ -32,7 +32,7 @@ class SMainController extends Controller
         // sum the number of pending order
         $pending = Order::where('order_status', 'pending')->count();
         // sum the number of avail table
-        $avail = Table::where('table_status', 'avail')->count();
+        $avail = Table::where('table_status', 'ว่าง')->count();
 
         return view('staff-main', [
             'total' => $total,

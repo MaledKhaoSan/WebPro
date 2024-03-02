@@ -99,10 +99,6 @@
     transition: all 0.3s;
 }
 
-<<<<<<< Updated upstream
-.tab_content.activecontent{
-  display: flex !important;
-=======
 .tab_content.activecontent {
     display: block !important;
 }
@@ -121,5 +117,4 @@ table,th {
 
 table,td {
     font-weight: 500;
->>>>>>> Stashed changes
 }

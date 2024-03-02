@@ -13,4 +13,9 @@ class Category extends Model
     protected $primaryKey = 'category_id'; // Primary key ของตาราง
     public $timestamps = false;
     protected $fillable = ['category_name'];
+
+    public function menus()
+    {
+        return $this->hasMany(Menu::class, 'category_id');
+    }
 }

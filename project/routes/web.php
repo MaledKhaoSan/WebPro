@@ -22,7 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/enterqueue', function () {
+    return view('enterqueue');
+});
 
 Route::get('/queue', function () {
     return view('queue');
